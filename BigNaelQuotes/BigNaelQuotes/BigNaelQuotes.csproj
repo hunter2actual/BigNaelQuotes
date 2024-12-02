@@ -1,20 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <AssemblyName>NaelPlugin</AssemblyName>
+        <AssemblyName>BigNaelQuotes</AssemblyName>
         <TargetFramework>net8.0-windows</TargetFramework>
         <PlatformTarget>x64</PlatformTarget>
         <Platforms>x64;AnyCPU</Platforms>
         <LangVersion>latest</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <OutputPath>$(AppData)\Eisenhuth\DalamudDevPlugins\NaelPlugin\</OutputPath>
         <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
         <AssemblyVersion>1.4.6.0</AssemblyVersion>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-        <PackageProjectUrl>https://github.com/Eisenhuth/dalamud-nael</PackageProjectUrl>
-        <Description>Dalamud Plugin that translates Nael's quotes</Description>
-        <RepositoryUrl>https://github.com/Eisenhuth/dalamud-nael</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/hunter2actual/BigNaelQuotes</PackageProjectUrl>
+        <Description>Dalamud Plugin that Makes Nael quotes more visible.</Description>
+        <RepositoryUrl>https://github.com/hunter2actual/BigNaelQuotes</RepositoryUrl>
     </PropertyGroup>
     
 
@@ -56,7 +55,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="NaelPlugin.json">
+        <None Include="BigNaelQuotes.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>

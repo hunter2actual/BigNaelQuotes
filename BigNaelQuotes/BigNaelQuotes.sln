@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nael", "nael\nael.csproj", "{03FDC219-8BCF-4B8C-BF64-52C6B84301E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigNaelQuotes", "BigNaelQuotes\BigNaelQuotes.csproj", "{03FDC219-8BCF-4B8C-BF64-52C6B84301E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
