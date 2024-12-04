@@ -1,31 +1,24 @@
 ﻿using Dalamud.Configuration;
 using Dalamud.Plugin;
 
-namespace nael
+namespace BigNaelQuotes;
+
+public class Configuration : IPluginConfiguration
 {
-    public class Configuration : IPluginConfiguration
+    public int Version { get; set; }
+    public bool Enabled { get; set; } = true;
+    public string CharacterName { get; set; } = "Nael deus Darnus";
+    public int TextDisplayDurationSeconds { get; set; } = 4;
+
+    private IDalamudPluginInterface _pluginInterface;
+
+    public void Initialize(IDalamudPluginInterface pInterface)
     {
-        public int Version { get; set; }
-        public bool Enabled { get; set; } = true;
-        
-        public string Dynamo { get; set; } = "IN";
-        public string Chariot { get; set; } = "OUT";
-        public string Beam { get; set; } = "STACK";
-        public string Dive { get; set; } = "DIVE";
-        public string MeteorStream { get; set; } = "SPREAD";
-        public string Separator { get; set; } = ">";
-        
+        _pluginInterface = pInterface;
+    }
 
-        private IDalamudPluginInterface pluginInterface;
-
-        public void Initialize(IDalamudPluginInterface pInterface)
-        {
-            pluginInterface = pInterface;
-        }
-
-        public void Save()
-        {
-            pluginInterface.SavePluginConfig(this);
-        }
+    public void Save()
+    {
+        _pluginInterface.SavePluginConfig(this);
     }
 }
