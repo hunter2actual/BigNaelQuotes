@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <AssemblyName>BigNaelQuotes</AssemblyName>
+        <Version>0.0.1</Version>
         <TargetFramework>net8.0-windows</TargetFramework>
         <PlatformTarget>x64</PlatformTarget>
         <Platforms>x64;AnyCPU</Platforms>
@@ -8,7 +9,6 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
-        <AssemblyVersion>1.4.6.0</AssemblyVersion>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
         <PackageProjectUrl>https://github.com/hunter2actual/BigNaelQuotes</PackageProjectUrl>

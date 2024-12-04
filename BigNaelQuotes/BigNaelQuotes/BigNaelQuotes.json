@@ -1,13 +1,13 @@
 {
   "Author": "hunter2_",
   "Name": "Big Nael Quotes",
-  "Description": "Makes Nael quotes more visible.",
-  "Punchline": "Makes Nael quotes more visible.",
-  "Changelog": "in dev",
+  "AssemblyVersion": "0.0.1",
   "InternalName": "BigNaelQuotes",
-  "Tags": ["ui"],
+  "Punchline": "Makes Nael quotes more visible.",
+  "Description": "Displays Nael quotes using the Dawntrail gimmick-text so they're easier to read.",
+  "Tags": ["ui", "nael", "quotes"],
   "RepoUrl": "https://github.com/hunter2actual/BigNaelQuotes",
-  "ImageUrls": [
-    "https://media.discordapp.net/attachments/906569835725606925/1313131624061468682/image.png?ex=674f049f&is=674db31f&hm=c358cf6b0682add5a66c503dd68a13e6862fcb4711ca847bb54dad8d103e52c6&=&format=webp&quality=lossless&width=311&height=224"
-  ]
+  "ImageUrls": ["https://i.imgur.com/LLZ1yN9.png"],
+  "AcceptsFeedback": true,
+  "Changelog": "Testing build"
 }
