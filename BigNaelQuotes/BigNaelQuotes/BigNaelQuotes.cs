@@ -4,8 +4,6 @@ using Dalamud.Game.Command;
 using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
-using Dalamud.Interface;
-using Dalamud.Interface.Components;
 using Dalamud.Interface.Utility;
 using Dalamud.IoC;
 using Dalamud.Plugin;
@@ -61,19 +59,19 @@ public class BigNaelQuotes : IDalamudPlugin
         foreach (var payload in message.Payloads)
         {
             if (payload is TextPayload { Text: not null } textPayload 
-                && sender.ToString().Equals(_configuration.CharacterName, StringComparison.Ordinal))
+                && sender.ToString().Contains("nael", StringComparison.OrdinalIgnoreCase))
             {
-                ShowTextGimmick(textPayload.Text, _configuration.TextDisplayDurationSeconds);
+                ShowTextGimmick(textPayload.Text);
             }
         }
     }
     
-    private static unsafe void ShowTextGimmick(string message, int durationInSeconds)
+    private unsafe void ShowTextGimmick(string message)
     {
         RaptureAtkModule.Instance()->ShowTextGimmickHint(
             Encoding.UTF8.GetBytes(message),
             RaptureAtkModule.TextGimmickHintStyle.Warning,
-            10 * durationInSeconds);
+            10 * _configuration.TextDisplayDurationSeconds);
     }
 
     private void DrawConfiguration()
@@ -82,19 +80,14 @@ public class BigNaelQuotes : IDalamudPlugin
             return;
             
         ImGui.Begin($"{Name} Configuration", ref _drawConfiguration);
+        
+        var enabled = _configuration.Enabled;
+        if (ImGui.Checkbox("Enable plugin", ref enabled))
+        {
+            _configuration.Enabled = enabled;
+        }
+        
         ImGui.PushItemWidth(150f * ImGuiHelpers.GlobalScale);
-
-        if (ImGuiComponents.IconButton(FontAwesomeIcon.Recycle))
-        {
-            _configuration.CharacterName = "Nael deus Darnus";
-        }
-        ImGui.SameLine();
-        var characterName = _configuration.CharacterName;
-        if (ImGui.InputText("NPC Name to match on", ref characterName, 32))
-        {
-            _configuration.CharacterName = characterName.Trim();
-        }
-
         var duration = _configuration.TextDisplayDurationSeconds;
         if (ImGui.InputInt("Quote display duration (seconds)", ref duration, 1))
         {
@@ -105,12 +98,15 @@ public class BigNaelQuotes : IDalamudPlugin
         
         ImGui.Separator();
         
-        if (ImGui.Button("Test message"))
+        if (ImGui.Button("Test quote"))
         {
-            ShowTextGimmick("From hallowed moon I bare iron,\nin my descent to wield!", _configuration.TextDisplayDurationSeconds);
+            ShowTextGimmick("From hallowed moon I bare iron,\nin my descent to wield!");
         }
-        
-        if (ImGui.Button("Save")) _configuration.Save();
+
+        if (ImGui.Button("Save"))
+        {
+            _configuration.Save();
+        }
         
         ImGui.End();
     }
