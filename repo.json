@@ -1,0 +1,17 @@
+[
+    {
+        "Author": "hunter2_",
+        "Name": "Big Nael Quotes",
+        "AssemblyVersion": "0.0.2",
+        "InternalName": "BigNaelQuotes",
+        "Punchline": "Makes Nael quotes more visible.",
+        "Description": "Displays Nael quotes using the Dawntrail gimmick-text so they're easier to read.",
+        "Tags": ["ui", "nael", "quotes"],
+        "RepoUrl": "https://github.com/hunter2actual/BigNaelQuotes",
+        "ImageUrls": ["https://i.imgur.com/LLZ1yN9.png"],
+        "DalamudApiLevel": 11,
+        "ApplicableVersion": "any",
+        "DownloadLinkInstall": "https://github.com/hunter2actual/DalamudMinesweeper/releases/download/1.2.2.0/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/hunter2actual/DalamudMinesweeper/releases/download/1.2.2.0/latest.zip"
+    }
+]
