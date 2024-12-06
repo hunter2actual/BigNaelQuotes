@@ -69,7 +69,7 @@ public class BigNaelQuotes : IDalamudPlugin
     private unsafe void ShowTextGimmick(string message)
     {
         RaptureAtkModule.Instance()->ShowTextGimmickHint(
-            Encoding.UTF8.GetBytes(message),
+            message,
             RaptureAtkModule.TextGimmickHintStyle.Warning,
             10 * _configuration.TextDisplayDurationSeconds);
     }
