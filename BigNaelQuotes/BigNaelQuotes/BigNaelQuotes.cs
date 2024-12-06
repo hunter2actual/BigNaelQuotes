@@ -20,6 +20,25 @@ public class BigNaelQuotes : IDalamudPlugin
     private static bool _drawConfiguration;
     private readonly Configuration _configuration;
     private readonly IChatGui _chatGui;
+
+    private static readonly string[] NaelQuotesEn =
+    [
+        "O hallowed moon,\nshine you the iron path!",
+        "O hallowed moon,\ntake fire and scorch my foes!",
+        "Blazing path,\nlead me to iron rule!",
+        "Take fire,\nO hallowed moon!",
+        "From on high I descend,\nthe iron path to walk!",
+        "From on high I descend,\nthe hallowed moon to call!",
+        "Fleeting light!\nAmid a rain of stars,\nexalt you the red moon!",
+        "Fleeting light!\n'Neath the red moon,\nscorch you the earth!",
+        "From on high I descend,\nthe moon and stars to bring!",
+        "From hallowed moon I descend,\na rain of stars to bring!",
+        "Unbending iron,\ntake fire and descend!",
+        "Unbending iron,\ndescend with fiery edge!",
+        "From hallowed moon I descend,\nupon burning earth to tread!",
+        "From hallowed moon I bare iron,\nin my descent to wield!"
+    ];
+    
     [PluginService] private static IDalamudPluginInterface PluginInterface { get; set; } = null!;
     [PluginService] private static ICommandManager CommandManager { get; set; } = null!;
 
@@ -100,7 +119,8 @@ public class BigNaelQuotes : IDalamudPlugin
         
         if (ImGui.Button("Test quote"))
         {
-            ShowTextGimmick("From hallowed moon I bare iron,\nin my descent to wield!");
+            var randomQuote = NaelQuotesEn[Random.Shared.Next(NaelQuotesEn.Length)];
+            ShowTextGimmick(randomQuote);
         }
 
         if (ImGui.Button("Save"))
