@@ -1,5 +1,9 @@
 ﻿using System;
-using System.Text;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text.Json;
+using Dalamud.Game;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
@@ -19,36 +23,26 @@ public class BigNaelQuotes : IDalamudPlugin
     private const string CommandName = "/bigquotes";
     private static bool _drawConfiguration;
     private readonly Configuration _configuration;
+    private readonly IClientState _clientState;
     private readonly IChatGui _chatGui;
+    private readonly NaelQuotes _naelQuotes;
 
-    private static readonly string[] NaelQuotesEn =
-    [
-        "O hallowed moon,\nshine you the iron path!",
-        "O hallowed moon,\ntake fire and scorch my foes!",
-        "Blazing path,\nlead me to iron rule!",
-        "Take fire,\nO hallowed moon!",
-        "From on high I descend,\nthe iron path to walk!",
-        "From on high I descend,\nthe hallowed moon to call!",
-        "Fleeting light!\nAmid a rain of stars,\nexalt you the red moon!",
-        "Fleeting light!\n'Neath the red moon,\nscorch you the earth!",
-        "From on high I descend,\nthe moon and stars to bring!",
-        "From hallowed moon I descend,\na rain of stars to bring!",
-        "Unbending iron,\ntake fire and descend!",
-        "Unbending iron,\ndescend with fiery edge!",
-        "From hallowed moon I descend,\nupon burning earth to tread!",
-        "From hallowed moon I bare iron,\nin my descent to wield!"
-    ];
-    
     [PluginService] private static IDalamudPluginInterface PluginInterface { get; set; } = null!;
     [PluginService] private static ICommandManager CommandManager { get; set; } = null!;
 
-    public BigNaelQuotes(IDalamudPluginInterface dalamudPluginInterface, IChatGui chatGui, ICommandManager commandManager)
+    public BigNaelQuotes(IDalamudPluginInterface dalamudPluginInterface, IChatGui chatGui, ICommandManager commandManager, IClientState clientState)
     {
         _chatGui = chatGui;
+        _clientState = clientState;
 
         _configuration = (Configuration) dalamudPluginInterface.GetPluginConfig() ?? new Configuration();
         _configuration.Initialize(dalamudPluginInterface);
-        
+
+        using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("BigNaelQuotes.NaelQuotes.json");
+        using var streamReader = new StreamReader(stream);
+        var json = streamReader.ReadToEnd();
+        _naelQuotes = JsonSerializer.Deserialize<NaelQuotes>(json);
+
         dalamudPluginInterface.UiBuilder.Draw += DrawConfiguration;
         dalamudPluginInterface.UiBuilder.OpenConfigUi += OpenConfig;
         dalamudPluginInterface.UiBuilder.OpenMainUi += OpenConfig;
@@ -116,11 +110,16 @@ public class BigNaelQuotes : IDalamudPlugin
         }
         
         ImGui.Separator();
-        
-        if (ImGui.Button("Test quote"))
+
+#if DEBUG
+        if (ImGui.Button("Test quote in a random language"))
         {
-            var randomQuote = NaelQuotesEn[Random.Shared.Next(NaelQuotesEn.Length)];
-            ShowTextGimmick(randomQuote);
+            ShowTextGimmick(GetQuote(new Random().Next(0, 12), new Random().Next(0, 3)));
+        }
+#endif        
+        if (ImGui.Button("Test quote in your language"))
+        {
+            ShowTextGimmick(GetQuote(new Random().Next(0, 12)));
         }
 
         if (ImGui.Button("Save"))
@@ -129,6 +128,66 @@ public class BigNaelQuotes : IDalamudPlugin
         }
         
         ImGui.End();
+    }
+
+    /// <summary>
+    /// uses the API quote ID to get the quote matching the client's language from the embedded NaelQuotes.json
+    /// quotes taken from https://xivapi.com/NpcYell/[id] and https://cafemaker.wakingsands.com/NpcYell/[id]
+    /// code taken from https://github.com/Eisenhuth/dalamud-nael/blob/master/nael/nael/NaelPlugin.cs 
+    /// </summary>
+    /// <param name="id">the quote ID</param>
+    /// <returns>the quote based on the ID and the client language</returns>
+    private string GetQuote(int id)
+    {
+        if (id < 6492 && id > 6507) return "Wrong ID. This should not happen. Please contact the developer.";
+
+        Quote quote = _naelQuotes.Quotes[id];
+        string quoteText;
+        switch (_clientState.ClientLanguage)
+        {
+            case ClientLanguage.Japanese:
+                return quote.Text.JP.Replace("\n\n", "\n");
+                break;
+            case ClientLanguage.English:
+                return quote.Text.EN.Replace("\n\n", "\n");
+                break;
+            case ClientLanguage.German:
+                return quote.Text.DE.Replace("\n\n", "\n");
+                break;
+            case ClientLanguage.French:
+                return quote.Text.FR.Replace("\n\n", "\n");
+                break;
+            default:
+                return quote.Text.EN.Replace("\n\n", "\n");
+                break;
+        }
+    }
+
+    /// <summary>
+    /// uses the API quote ID to get the quote matching the client's language from the embedded NaelQuotes.json
+    /// quotes taken from https://xivapi.com/NpcYell/[id] and https://cafemaker.wakingsands.com/NpcYell/[id]
+    /// code taken from https://github.com/Eisenhuth/dalamud-nael/blob/master/nael/nael/NaelPlugin.cs 
+    /// </summary>
+    /// <param name="id">the quote ID</param>
+    /// <returns>the quote based on the ID and the client language</returns>
+    private string GetQuote(int id, int language)
+    {
+        if (id < 6492 && id > 6507) return "Wrong ID. This should not happen. Please contact the developer.";
+
+        Quote quote = _naelQuotes.Quotes[id];
+        switch (language)
+        {
+            case ((int)ClientLanguage.Japanese):
+                return quote.Text.JP.Replace("\n\n", "\n");
+            case (int)ClientLanguage.English:
+                return quote.Text.EN.Replace("\n\n", "\n");
+            case (int)ClientLanguage.German:
+                return quote.Text.DE.Replace("\n\n", "\n");
+            case (int)ClientLanguage.French:
+                return quote.Text.FR.Replace("\n\n", "\n");
+            default:
+                return quote.Text.EN.Replace("\n\n", "\n");
+        }
     }
 
     private static void OpenConfig()

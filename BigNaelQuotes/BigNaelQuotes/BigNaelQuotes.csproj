@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <AssemblyName>BigNaelQuotes</AssemblyName>
         <Version>0.0.4</Version>
@@ -35,6 +35,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Remove="NaelPlugin.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="NaelQuotes.json" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="DalamudPackager" Version="11.0.0" />
     </ItemGroup>
 
@@ -55,5 +63,11 @@
             <HintPath>$(DalamudLibPath)\FFXIVClientStructs.dll</HintPath>
             <Private>false</Private>
         </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="NaelQuotes.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>
