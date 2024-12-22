@@ -72,7 +72,7 @@ public class BigNaelQuotes : IDalamudPlugin
         foreach (var payload in message.Payloads)
         {
             if (payload is TextPayload { Text: not null } textPayload 
-                && (sender.ToString().Contains("nael", StringComparison.OrdinalIgnoreCase) || sender.ToString().Contains("ネール", StringComparison.OrdinalIgnoreCase)))
+                && (sender.ToString().Contains("nael", StringComparison.OrdinalIgnoreCase) || sender.ToString().Contains("ネール", StringComparison.OrdinalIgnoreCase)) || sender.ToString().Contains("奈尔", StringComparison.OrdinalIgnoreCase)))
             {
                 ShowTextGimmick(textPayload.Text);
             }
@@ -139,8 +139,6 @@ public class BigNaelQuotes : IDalamudPlugin
     /// <returns>the quote based on the ID and the client language</returns>
     private string GetQuote(int id)
     {
-        if (id != 6498 && id != 6499) return "";
-
         Quote quote = _naelQuotes.Quotes[id];
         string quoteText;
         switch (_clientState.ClientLanguage)
@@ -167,8 +165,6 @@ public class BigNaelQuotes : IDalamudPlugin
     /// <returns>the quote based on the ID and the client language</returns>
     private string GetQuote(int id, int language)
     {
-        if (id != 6498 && id != 6499) return "";
-
         Quote quote = _naelQuotes.Quotes[id];
         switch (language)
         {

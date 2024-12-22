@@ -1,13 +1,13 @@
 {
-  "Author": "hunter2_",
+  "Author": "hunter2_, originally by Eisenhuth",
   "Name": "Big Nael Quotes",
   "AssemblyVersion": "0.0.4",
   "InternalName": "BigNaelQuotes",
   "Punchline": "Makes Nael quotes more visible.",
   "Description": "Displays Nael quotes using the Dawntrail gimmick-text so they're easier to read.",
-  "Tags": ["ui", "nael", "quotes"],
+  "Tags": [ "ui", "nael", "quotes" ],
   "RepoUrl": "https://github.com/hunter2actual/BigNaelQuotes",
-  "ImageUrls": ["https://i.imgur.com/LLZ1yN9.png"],
+  "ImageUrls": [ "https://i.imgur.com/LLZ1yN9.png" ],
   "AcceptsFeedback": true,
   "Changelog": "Randomize quote selection"
 }
