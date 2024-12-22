@@ -2,128 +2,142 @@
   "Quotes" : [
     {
       "ID" : 6492,
-      "Text" : {
-        "DE" : "O roter Mond! Führe mich zur Herrschaft! ",
-        "EN" : "O hallowed moon,\n\nshine you the iron path!",
-        "FR" : "Ô lune ! Éclaire la voie de la domination !",
-        "JP" : "月よ！\n\n鉄の覇道を照らせ！"
+      "Text": {
+        "CN": "月光啊！\n照亮铁血霸道！",
+        "DE": "O roter Mond! Führe mich zur Herrschaft! ",
+        "EN": "O hallowed moon,\n\nshine you the iron path!",
+        "FR": "Ô lune ! Éclaire la voie de la domination !",
+        "JP": "月よ！\n\n鉄の覇道を照らせ！"
       }
     },
     {
       "ID" : 6493,
-      "Text" : {
-        "DE" : "O roter Mond! Umlodere meinen Pfad!",
-        "EN" : "O hallowed moon,\n\ntake fire and scorch my foes!",
-        "FR" : "Que l'incandescence de la lune brûle mes ennemis !",
-        "JP" : "月よ！\n\n赤熱し、神敵を焼け！"
+      "Text": {
+        "CN": "月光啊！\n用你的炽热烧尽敌人！",
+        "DE": "O roter Mond! Umlodere meinen Pfad!",
+        "EN": "O hallowed moon,\n\ntake fire and scorch my foes!",
+        "FR": "Que l'incandescence de la lune brûle mes ennemis !",
+        "JP": "月よ！\n\n赤熱し、神敵を焼け！"
       }
     },
     {
       "ID" : 6494,
-      "Text" : {
-        "DE" : "Umloderter Pfad, führe mich zur Herrschaft!",
-        "EN" : "Blazing path,\n\nlead me to iron rule!",
-        "FR" : "La voie marquée par l'incandescence mène à la domination !",
-        "JP" : "赤熱し、焼かれし道を\n\n鉄の覇道と成す！"
+      "Text": {
+        "CN": "被炽热灼烧过的轨迹\n乃成铁血霸道！",
+        "DE": "Umloderter Pfad, führe mich zur Herrschaft!",
+        "EN": "Blazing path,\n\nlead me to iron rule!",
+        "FR": "La voie marquée par l'incandescence mène à la domination !",
+        "JP": "赤熱し、焼かれし道を\n\n鉄の覇道と成す！"
       }
     },
     {
       "ID" : 6495,
-      "Text" : {
-        "DE" : "Flammender Pfad, geschaffen vom roten Mond!",
-        "EN" : "Take fire,\n\nO hallowed moon!",
-        "FR" : "Baignez dans la bénédiction de la lune incandescente !",
-        "JP" : "赤熱せし\n\n月の祝福を！"
+      "Text": {
+        "CN": "炽热燃烧！\n给予我月亮的祝福！",
+        "DE": "Flammender Pfad, geschaffen vom roten Mond!",
+        "EN": "Take fire,\n\nO hallowed moon!",
+        "FR": "Baignez dans la bénédiction de la lune incandescente !",
+        "JP": "赤熱せし\n\n月の祝福を！"
       }
     },
     {
       "ID" : 6496,
-      "Text" : {
-        "DE" : "Seht, ich steige herab, um euch zu beherrschen!",
-        "EN" : "From on high I descend,\n\nthe iron path to walk!",
-        "FR" : "Du haut des cieux, je vais descendre pour conquérir !",
-        "JP" : "我、舞い降りて\n\n鉄の覇道を征く！"
+      "Text": {
+        "CN": "我降临于此，\n征战铁血霸道！",
+        "DE": "Seht, ich steige herab, um euch zu beherrschen!",
+        "EN": "From on high I descend,\n\nthe iron path to walk!",
+        "FR": "Du haut des cieux, je vais descendre pour conquérir !",
+        "JP": "我、舞い降りて\n\n鉄の覇道を征く！"
       }
     },
     {
       "ID" : 6497,
-      "Text" : {
-        "DE" : "Seht, ich steige herab, vom rotglühenden Monde!",
-        "EN" : "From on high I descend,\n\nthe hallowed moon to call!",
-        "FR" : "Des cieux je vais descendre et révérer la lune !",
-        "JP" : "我、舞い降りて\n\n月を仰がん！"
+      "Text": {
+        "CN": "我降临于此，\n对月长啸！",
+        "DE": "Seht, ich steige herab, vom rotglühenden Monde!",
+        "EN": "From on high I descend,\n\nthe hallowed moon to call!",
+        "FR": "Des cieux je vais descendre et révérer la lune !",
+        "JP": "我、舞い降りて\n\n月を仰がん！"
       }
     },
     {
       "ID" : 6500,
-      "Text" : {
-        "DE" : "Neues Gestirn! Überstrahle jede Sternschnuppe!",
-        "EN" : "Fleeting light!\n\nAmid a rain of stars,\n\nexalt you the red moon!",
-        "FR" : "Supernova, brille de tout ton feu et glorifie la lune rouge !",
-        "JP" : "超新星よ、輝きを増せ！\n\n星降りの夜に、紅月を称えよ！"
+      "Text": {
+        "CN": "超新星啊，更加闪耀吧！\n在星降之夜，称赞红月！",
+        "DE": "Neues Gestirn! Überstrahle jede Sternschnuppe!",
+        "EN": "Fleeting light!\n\nAmid a rain of stars,\n\nexalt you the red moon!",
+        "FR": "Supernova, brille de tout ton feu et glorifie la lune rouge !",
+        "JP": "超新星よ、輝きを増せ！\n\n星降りの夜に、紅月を称えよ！"
       }
     },
     {
       "ID" : 6501,
-      "Text" : {
-        "DE" : "Neues Gestirn! Glühe herab und umlodere meinen Pfad!",
-        "EN" : "Fleeting light!\n\n'Neath the red moon,\n\nscorch you the earth!",
-        "FR" : "Supernova, brille de tout ton feu et irradie la terre rougie !",
-        "JP" : "超新星よ、輝きを増せ！\n\n紅月下の赤熱せし地を照らせ！"
+      "Text": {
+        "CN": "超新星啊，更加闪耀吧！\n照亮红月下炽热之地！",
+        "DE": "Neues Gestirn! Glühe herab und umlodere meinen Pfad!",
+        "EN": "Fleeting light!\n\n'Neath the red moon,\n\nscorch you the earth!",
+        "FR": "Supernova, brille de tout ton feu et irradie la terre rougie !",
+        "JP": "超新星よ、輝きを増せ！\n\n紅月下の赤熱せし地を照らせ！"
       }
     },
     {
       "ID" : 6502,
-      "Text" : {
-        "DE" : "Ich steige herab zu Ehre des roten Mondes! Einer Sternschnuppe gleich!",
-        "EN" : "From on high I descend,\n\nthe moon and stars to bring!",
-        "FR" : "Du haut des cieux, j'appelle une pluie d'étoiles !",
-        "JP" : "我、舞い降りて月を仰ぎ\n\n星降りの夜を招かん！"
+      "Text": {
+        "CN": "我降临于此对月长啸！\n召唤星降之夜！",
+        "DE": "Ich steige herab zu Ehre des roten Mondes! Einer Sternschnuppe gleich!",
+        "EN": "From on high I descend,\n\nthe moon and stars to bring!",
+        "FR": "Du haut des cieux, j'appelle une pluie d'étoiles !",
+        "JP": "我、舞い降りて月を仰ぎ\n\n星降りの夜を招かん！"
       }
     },
     {
       "ID" : 6503,
-      "Text" : {
-        "DE" : "O roter Mond, sieh mich herabsteigen! Einer Sternschnuppe gleich!",
-        "EN" : "From hallowed moon I descend,\n\na rain of stars to bring!",
-        "FR" : "Depuis la lune, j'invoque une pluie d'étoiles !",
-        "JP" : "我、月より舞い降りて\n\n星降りの夜を招かん！"
+      "Text": {
+        "CN": "我自月而来降临于此，\n召唤星降之夜！",
+        "DE": "O roter Mond, sieh mich herabsteigen! Einer Sternschnuppe gleich!",
+        "EN": "From hallowed moon I descend,\n\na rain of stars to bring!",
+        "FR": "Depuis la lune, j'invoque une pluie d'étoiles !",
+        "JP": "我、月より舞い降りて\n\n星降りの夜を招かん！"
       }
     },
     {
       "ID" : 6504,
-      "Text" : {
-        "DE" : "Zur Herrschaft führt mein umloderter Pfad! Auf diesen steige ich herab!",
-        "EN" : "Unbending iron,\n\ntake fire and descend!",
-        "FR" : "Ô noble acier ! Rougis ardemment et deviens ma lame transperçante !",
-        "JP" : "鉄よ、赤熱せよ！\n\n舞い降りし我が刃となれ！"
+      "Text": {
+        "CN": "钢铁燃烧吧！\n成为我降临于此的刀剑吧！",
+        "DE": "Zur Herrschaft führt mein umloderter Pfad! Auf diesen steige ich herab!",
+        "EN": "Unbending iron,\n\ntake fire and descend!",
+        "FR": "Ô noble acier ! Rougis ardemment et deviens ma lame transperçante !",
+        "JP": "鉄よ、赤熱せよ！\n\n舞い降りし我が刃となれ！"
       }
     },
     {
       "ID" : 6505,
-      "Text" : {
-        "DE" : "Zur Herrschaft steige ich herab, auf umlodertem Pfad!",
-        "EN" : "Unbending iron,\n\ndescend with fiery edge!",
-        "FR" : "Fier acier ! Sois ma lame plongeante et deviens incandescent !",
-        "JP" : "鉄よ、舞い降りし\n\n我の刃となり赤熱せよ！"
+      "Text": {
+        "CN": "钢铁成为我降临于此的燃烧之剑！",
+        "DE": "Zur Herrschaft steige ich herab, auf umlodertem Pfad!",
+        "EN": "Unbending iron,\n\ndescend with fiery edge!",
+        "FR": "Fier acier ! Sois ma lame plongeante et deviens incandescent !",
+        "JP": "鉄よ、舞い降りし\n\n我の刃となり赤熱せよ！"
       }
     },
     {
       "ID" : 6506,
-      "Text" : {
-        "DE" : "O roter Mond! Ich stieg herab, um deine Herrschaft zu bringen!",
-        "EN" : "From hallowed moon I descend,\n\nupon burning earth to tread!",
-        "FR" : "De la lune, je descends et marche sur la terre ardente !",
-        "JP" : "我、月より舞い降りて\n\n赤熱せし地を歩まん！"
+      "Text": {
+        "CN": "我自月而来降临于此，\n踏过炽热之地！",
+        "DE": "O roter Mond! Ich stieg herab, um deine Herrschaft zu bringen!",
+        "EN": "From hallowed moon I descend,\n\nupon burning earth to tread!",
+        "FR": "De la lune, je descends et marche sur la terre ardente !",
+        "JP": "我、月より舞い降りて\n\n赤熱せし地を歩まん！"
       }
     },
     {
       "ID" : 6507,
-      "Text" : {
-        "DE" : "O roter Mond, als Künder deiner Herrschaft stieg ich herab!",
-        "EN" : "From hallowed moon I bare iron,\n\nin my descent to wield!",
-        "FR" : "De la lune je m'arme d'acier et descends !",
-        "JP" : "我、月より鉄を備え\n\n舞い降りん！"
+      "Text": {
+        "CN": "我自月而来携钢铁降临于此！",
+        "DE": "O roter Mond, als Künder deiner Herrschaft stieg ich herab!",
+        "EN": "From hallowed moon I bare iron,\n\nin my descent to wield!",
+        "FR": "De la lune je m'arme d'acier et descends !",
+        "JP": "我、月より鉄を備え\n\n舞い降りん！"
       }
     }
   ]

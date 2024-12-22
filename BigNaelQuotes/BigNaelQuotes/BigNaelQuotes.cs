@@ -114,7 +114,7 @@ public class BigNaelQuotes : IDalamudPlugin
 #if DEBUG
         if (ImGui.Button("Test quote in a random language"))
         {
-            ShowTextGimmick(GetQuote(new Random().Next(0, 12), new Random().Next(0, 3)));
+            ShowTextGimmick(GetQuote(new Random().Next(0, 12), new Random().Next(0, 4)));
         }
 #endif        
         if (ImGui.Button("Test quote in your language"))
@@ -139,7 +139,7 @@ public class BigNaelQuotes : IDalamudPlugin
     /// <returns>the quote based on the ID and the client language</returns>
     private string GetQuote(int id)
     {
-        if (id < 6492 && id > 6507) return "Wrong ID. This should not happen. Please contact the developer.";
+        if (id != 6498 && id != 6499) return "";
 
         Quote quote = _naelQuotes.Quotes[id];
         string quoteText;
@@ -147,19 +147,14 @@ public class BigNaelQuotes : IDalamudPlugin
         {
             case ClientLanguage.Japanese:
                 return quote.Text.JP.Replace("\n\n", "\n");
-                break;
             case ClientLanguage.English:
                 return quote.Text.EN.Replace("\n\n", "\n");
-                break;
             case ClientLanguage.German:
                 return quote.Text.DE.Replace("\n\n", "\n");
-                break;
             case ClientLanguage.French:
                 return quote.Text.FR.Replace("\n\n", "\n");
-                break;
             default:
-                return quote.Text.EN.Replace("\n\n", "\n");
-                break;
+                return quote.Text.CN.Replace("\n\n", "\n");
         }
     }
 
@@ -172,7 +167,7 @@ public class BigNaelQuotes : IDalamudPlugin
     /// <returns>the quote based on the ID and the client language</returns>
     private string GetQuote(int id, int language)
     {
-        if (id < 6492 && id > 6507) return "Wrong ID. This should not happen. Please contact the developer.";
+        if (id != 6498 && id != 6499) return "";
 
         Quote quote = _naelQuotes.Quotes[id];
         switch (language)
@@ -185,8 +180,10 @@ public class BigNaelQuotes : IDalamudPlugin
                 return quote.Text.DE.Replace("\n\n", "\n");
             case (int)ClientLanguage.French:
                 return quote.Text.FR.Replace("\n\n", "\n");
+            case 4:
+                return quote.Text.CN.Replace("\n\n", "\n");
             default:
-                return quote.Text.EN.Replace("\n\n", "\n");
+                return quote.Text.CN.Replace("\n\n", "\n");
         }
     }
 
