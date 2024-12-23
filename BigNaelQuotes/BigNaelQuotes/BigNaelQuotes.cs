@@ -72,7 +72,7 @@ public class BigNaelQuotes : IDalamudPlugin
         foreach (var payload in message.Payloads)
         {
             if (payload is TextPayload { Text: not null } textPayload 
-                && (sender.ToString().Contains("nael", StringComparison.OrdinalIgnoreCase) || sender.ToString().Contains("ネール", StringComparison.OrdinalIgnoreCase)) || sender.ToString().Contains("奈尔", StringComparison.OrdinalIgnoreCase)))
+                && (sender.ToString().Contains("nael", StringComparison.OrdinalIgnoreCase) || sender.ToString().Contains("ネール", StringComparison.OrdinalIgnoreCase) || sender.ToString().Contains("奈尔", StringComparison.OrdinalIgnoreCase)))
             {
                 ShowTextGimmick(textPayload.Text);
             }
