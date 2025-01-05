@@ -69,9 +69,6 @@ public class BigNaelQuotes : IDalamudPlugin
 
     private void OnChatMessage(XivChatType type, int timestamp, ref SeString sender, ref SeString message, ref bool handled)
     {
-        if (!_configuration.Enabled) 
-            return;
-
         if (type != XivChatType.NPCDialogueAnnouncements)
             return;
 
@@ -99,12 +96,6 @@ public class BigNaelQuotes : IDalamudPlugin
             return;
             
         ImGui.Begin($"{Name} Configuration", ref _drawConfiguration);
-        
-        var enabled = _configuration.Enabled;
-        if (ImGui.Checkbox("Enable plugin", ref enabled))
-        {
-            _configuration.Enabled = enabled;
-        }
         
         ImGui.PushItemWidth(150f * ImGuiHelpers.GlobalScale);
         var duration = _configuration.TextDisplayDurationSeconds;

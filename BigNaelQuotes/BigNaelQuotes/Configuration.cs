@@ -6,7 +6,6 @@ namespace BigNaelQuotes;
 public class Configuration : IPluginConfiguration
 {
     public int Version { get; set; }
-    public bool Enabled { get; set; } = true;
     public int TextDisplayDurationSeconds { get; set; } = 4;
 
     private IDalamudPluginInterface _pluginInterface;
