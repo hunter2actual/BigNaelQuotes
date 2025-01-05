@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Text;
+using System.Linq;
 using Dalamud.Game.Command;
 using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
@@ -75,11 +75,23 @@ public class BigNaelQuotes : IDalamudPlugin
         foreach (var payload in message.Payloads)
         {
             if (payload is TextPayload { Text: not null } textPayload 
-                && sender.ToString().Contains("nael", StringComparison.OrdinalIgnoreCase))
+                && IsNael(sender.ToString()))
             {
                 ShowTextGimmick(textPayload.Text);
             }
         }
+    }
+    
+    private bool IsNael(string name)
+    {
+        string[] names =
+        [
+            "Nael deus Darnus", // EN/DE/FR
+            "ネール・デウス・ダーナス", // JP
+            "奈尔·神·达纳斯" // CN
+        ]; 
+            
+        return names.Contains(name, StringComparer.OrdinalIgnoreCase);
     }
     
     private unsafe void ShowTextGimmick(string message)
@@ -108,15 +120,16 @@ public class BigNaelQuotes : IDalamudPlugin
         
         ImGui.Separator();
         
-        if (ImGui.Button("Test quote"))
+        if (ImGui.Button("Test quote (English only)"))
         {
             var randomQuote = NaelQuotesEn[Random.Shared.Next(NaelQuotesEn.Length)];
             ShowTextGimmick(randomQuote);
         }
 
-        if (ImGui.Button("Save"))
+        if (ImGui.Button("Save and close"))
         {
             _configuration.Save();
+            _drawConfiguration = false;
         }
         
         ImGui.End();
