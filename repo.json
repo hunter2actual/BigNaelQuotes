@@ -2,7 +2,7 @@
     {
         "Author": "hunter2_",
         "Name": "Big Nael Quotes",
-        "AssemblyVersion": "0.0.4",
+        "AssemblyVersion": "0.0.5",
         "InternalName": "BigNaelQuotes",
         "Punchline": "Makes Nael quotes more visible.",
         "Description": "Displays Nael quotes using the Dawntrail gimmick-text so they're easier to read.",
@@ -11,7 +11,7 @@
         "ImageUrls": ["https://i.imgur.com/LLZ1yN9.png"],
         "DalamudApiLevel": 11,
         "ApplicableVersion": "any",
-        "DownloadLinkInstall": "https://github.com/hunter2actual/BigNaelQuotes/releases/download/0.0.4/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/hunter2actual/BigNaelQuotes/releases/download/0.0.4/latest.zip"
+        "DownloadLinkInstall": "https://github.com/hunter2actual/BigNaelQuotes/releases/download/0.0.5/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/hunter2actual/BigNaelQuotes/releases/download/0.0.5/latest.zip"
     }
 ]
