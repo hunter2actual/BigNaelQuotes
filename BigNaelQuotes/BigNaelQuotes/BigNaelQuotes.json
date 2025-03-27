@@ -1,7 +1,7 @@
 {
   "Author": "hunter2_, originally by Eisenhuth",
   "Name": "Big Nael Quotes",
-  "AssemblyVersion": "0.0.5",
+  "AssemblyVersion": "0.0.6",
   "InternalName": "BigNaelQuotes",
   "Punchline": "Makes Nael quotes more visible.",
   "Description": "Displays Nael quotes using the Dawntrail gimmick-text so they're easier to read.",
@@ -9,5 +9,5 @@
   "RepoUrl": "https://github.com/hunter2actual/BigNaelQuotes",
   "ImageUrls": ["https://i.imgur.com/LLZ1yN9.png"],
   "AcceptsFeedback": true,
-  "Changelog": "Randomize quote selection"
+  "Changelog": "Update for api12/dotnet9"
 }
