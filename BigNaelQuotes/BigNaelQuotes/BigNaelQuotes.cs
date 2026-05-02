@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Dalamud.Game.Command;
-using Dalamud.Game.Text;
-using Dalamud.Game.Text.SeStringHandling;
-using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Interface.Utility;
 using Dalamud.IoC;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using FFXIVClientStructs.FFXIV.Client.UI;
 using Dalamud.Bindings.ImGui;
+using Dalamud.Game.Chat;
 
 namespace BigNaelQuotes;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
 public class BigNaelQuotes : IDalamudPlugin
 {
     public static string Name => "Big Nael Quotes";
@@ -45,7 +45,7 @@ public class BigNaelQuotes : IDalamudPlugin
     {
         _chatGui = chatGui;
 
-        _configuration = (Configuration) dalamudPluginInterface.GetPluginConfig() ?? new Configuration();
+        _configuration = (Configuration) (dalamudPluginInterface.GetPluginConfig() ?? new Configuration());
         _configuration.Initialize(dalamudPluginInterface);
         
         dalamudPluginInterface.UiBuilder.Draw += DrawConfiguration;
@@ -66,18 +66,11 @@ public class BigNaelQuotes : IDalamudPlugin
         OpenConfig();
     }
 
-    private void OnChatMessage(XivChatType type, int timestamp, ref SeString sender, ref SeString message, ref bool handled)
+    private void OnChatMessage(IHandleableChatMessage message)
     {
-        if (type != XivChatType.NPCDialogueAnnouncements)
-            return;
-
-        foreach (var payload in message.Payloads)
+        if (IsNael(message.Sender.ToString()))
         {
-            if (payload is TextPayload { Text: not null } textPayload 
-                && IsNael(sender.ToString()))
-            {
-                ShowTextGimmick(textPayload.Text);
-            }
+            ShowTextGimmick(message.Message.TextValue);
         }
     }
     
